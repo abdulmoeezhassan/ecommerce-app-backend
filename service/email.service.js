@@ -5,14 +5,14 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: 'info@codeswave.com',
-    pass: 'codesWave1234$$##',
+    user: '',
+    pass: '',
   },
 });
 
 const sendMail = async (to, subject, text) => {
   const mailOptions = {
-    from: 'info@codeswave.com',
+    from: '',
     to,
     subject,
     text,
