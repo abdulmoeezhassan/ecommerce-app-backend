@@ -8,7 +8,8 @@ const db = require("./db/db");
 var indexRouter = require("./routes/index.router");
 var usersRouter = require("./routes/users.router");
 var authRouter = require("./routes/auth.router.js");
-
+var cartRouter=require("./routes/cart.router.js");
+var orderController=require("./routes/orders.route.js")
 require("dotenv").config();
 var app = express();
 db();
@@ -20,7 +21,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/api/users", usersRouter);
+app.use("/api/cart", cartRouter); 
 app.use("/api/auth", authRouter);
+app.use("/api/orders", orderController);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
