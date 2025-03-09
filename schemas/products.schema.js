@@ -9,7 +9,7 @@ const productSchema = new Schema(
     color: [{ type: String }],
     quality: [{ type: String }],
     size: [{ type: String }],
-    imagePath: [{ type: String }],
+    images: [{ type: String }],
     supplierId: {
       type: Schema.Types.ObjectId,
       ref: "Supplier",

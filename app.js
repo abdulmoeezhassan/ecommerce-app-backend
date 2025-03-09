@@ -9,7 +9,10 @@ var indexRouter = require("./routes/index.router");
 var usersRouter = require("./routes/users.router");
 var authRouter = require("./routes/auth.router.js");
 var cartRouter=require("./routes/cart.router.js");
-var orderController=require("./routes/orders.route.js")
+var orderController=require("./routes/orders.route.js");
+var productController=require("./routes/products.router.js");
+var designController=require("./routes/customDesign.router.js");
+
 require("dotenv").config();
 var app = express();
 db();
@@ -24,6 +27,8 @@ app.use("/api/users", usersRouter);
 app.use("/api/cart", cartRouter); 
 app.use("/api/auth", authRouter);
 app.use("/api/orders", orderController);
+app.use("/api/products", productController);
+app.use("/api/design", designController);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

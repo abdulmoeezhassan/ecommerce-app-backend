@@ -2,8 +2,7 @@ const Cart=require("../schemas/cart.schema")
 
 let cartController = {};
 
-// Save Cart
-cartController.saveCartController= async (req, res) => {
+cartController.createUserCart= async (req, res) => {
   try {
     const { products, userId, supplierId, totalAmount } = req.body;
 
@@ -43,4 +42,4 @@ cartController.getCartByUser = async (req, res) => {
   }
 };
 
-module.exports = {saveCartController};
+module.exports = cartController;
