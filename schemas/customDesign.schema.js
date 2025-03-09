@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const customDesignSchema = new mongoose.Schema(
   {
     userId: {
-         type: Schema.Types.ObjectId,
-          ref: "User",
-           required: true 
-        },
-        
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true
+    },
+
     supplierId: {
       type: Schema.Types.ObjectId,
       ref: "Supplier",
@@ -19,14 +19,14 @@ const customDesignSchema = new mongoose.Schema(
       required: true,
     },
     imagePath: { type: String, required: true },
-    userPhoneNumber: { type: String,},
-    email: { type: String,},
+    userPhoneNumber: { type: String, },
+    email: { type: String, },
     designDescription: { type: String, },
     status: {
       type: String,
       enum: ["pending", "approved", "rejected", "completed"],
       default: "pending",
-      
+
     },
   },
   { timestamps: true }
